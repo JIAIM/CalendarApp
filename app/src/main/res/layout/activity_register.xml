@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background_gradient2"
+    tools:context=".RegisterActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/comfortaa_bold"
+        android:layout_marginTop="80dp"
+        android:textColor="@color/text_grey"
+        android:textSize="30sp"
+        android:text="Join Us Now!"/>
+
+    <TextView
+        android:layout_width="300sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:fontFamily="@font/comfortaa"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/text_grey"
+        android:textSize="25sp"
+        android:text="Let’s get started with your registration"/>
+
+    <EditText
+        android:id="@+id/register_username"
+        android:layout_width="300sp"
+        android:layout_height="60sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/input"
+        android:padding="16dp"
+        android:textColorHint="#B0B0B0"
+        android:textColor="@color/text_grey"
+        android:fontFamily="@font/comfortaa"
+        android:textSize="16sp"
+        android:elevation="20dp"
+        android:hint="Enter username"/>
+
+
+    <EditText
+        android:id="@+id/register_email"
+        android:layout_width="300sp"
+        android:layout_height="60sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/input"
+        android:padding="16dp"
+        android:textColorHint="#B0B0B0"
+        android:textColor="@color/text_grey"
+        android:fontFamily="@font/comfortaa"
+        android:textSize="16sp"
+        android:elevation="20dp"
+        android:hint="Email"/>
+
+    <EditText
+        android:id="@+id/register_password"
+        android:layout_width="300sp"
+        android:layout_height="60sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/input"
+        android:padding="16dp"
+        android:textColorHint="#B0B0B0"
+        android:textColor="@color/text_grey"
+        android:fontFamily="@font/comfortaa"
+        android:textSize="16sp"
+        android:elevation="20dp"
+        android:hint="Password"/>
+
+    <Button
+        android:id="@+id/register_button"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/blue"
+        android:fontFamily="@font/comfortaa_bold"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:cornerRadius="8dp"
+        android:text="Submit"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginLeft="100dp">
+
+        <View
+            android:layout_marginTop="2dp"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="@color/text_grey" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Or continue with"
+            android:textColor="@color/text_grey"
+            android:fontFamily="@font/comfortaa"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_marginTop="2dp"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="@color/text_grey" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="280dp"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center_vertical"
+        android:layout_marginTop="20dp">
+        <LinearLayout
+            android:id="@+id/register_google"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_border"
+            android:padding="0dp"
+            android:layout_margin="0dp">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/google"
+                android:contentDescription="Google Icon" />
+        </LinearLayout>
+        <!-- Карточка Apple -->
+        <LinearLayout
+            android:id="@+id/register_apple"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:layout_margin="50dp"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_border"
+            android:padding="0dp">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/apple"
+                android:contentDescription="Apple Icon" />
+        </LinearLayout>
+        <!-- Карточка Facebook -->
+        <LinearLayout
+            android:id="@+id/register_facebook"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_border"
+            android:padding="0dp">
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/facebook"
+                android:contentDescription="Facebook Icon" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="110dp"
+        android:layout_marginLeft="110dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Have an account?"
+            android:textColor="@color/text_grey"
+            android:fontFamily="@font/comfortaa"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/register_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textColor="@color/pink"
+            android:fontFamily="@font/comfortaa_bold"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#08090A</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="text_grey">#5D5E60</color>
+    <color name="blue">#66C7F4</color>
+    <color name="pink">#EA638C</color>
+    <color name="no_day">#EAF7CF</color>
+    <color name="basic_day">#272727</color>
+    <color name="green_day">#09A129</color>
+    <color name="blue_day">#48BEFF</color>
+    <color name="orange_day">#FB6107</color>
+</resources>
