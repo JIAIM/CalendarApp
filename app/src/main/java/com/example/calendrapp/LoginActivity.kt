@@ -62,6 +62,8 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this, "User is authenticated", Toast.LENGTH_LONG).show()
                 userLogin.text.clear()
                 userPassword.text.clear()
+                val intent = Intent(this, CalendarActivity::class.java)
+                startActivity(intent)
             } else {
                 Toast.makeText(this, "User is NOT authenticated", Toast.LENGTH_LONG).show()
 
@@ -113,17 +115,19 @@ class LoginActivity : AppCompatActivity() {
                 val db = DBHelper(this, null)
                 if (db.isGoogleUser(email)) {
                     Toast.makeText(this, "User with email $email is authenticated using Google", Toast.LENGTH_LONG).show()
+                    val intent = Intent(this, CalendarActivity::class.java)
+                    startActivity(intent)
                 } else {
                     val isAdded = db.addGoogleUser(email)
                     if (isAdded) {
                         Toast.makeText(this, "Welcome, $email! User is registered using Google", Toast.LENGTH_LONG).show()
+                        val intent = Intent(this, CalendarActivity::class.java)
+                        startActivity(intent)
                     } else {
                         Toast.makeText(this, "Error registration using google", Toast.LENGTH_SHORT).show()
                     }
                 }
 
-                val intent = Intent(this, CalendarActivity::class.java)
-                startActivity(intent)
             } else {
                 Toast.makeText(this, "Can`t find user Email", Toast.LENGTH_SHORT).show()
             }

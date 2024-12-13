@@ -18,7 +18,7 @@ class CalendarAdapter(
 ) : RecyclerView.Adapter<CalendarAdapter.CalendarViewHolder>() {
 
     private var selectedPosition: Int = RecyclerView.NO_POSITION
-    private val today: String = Calendar.getInstance().get(Calendar.DAY_OF_MONTH).toString()// Текущий день
+    private val today: String = Calendar.getInstance().get(Calendar.DAY_OF_MONTH).toString()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CalendarViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_calendar_day, parent, false)

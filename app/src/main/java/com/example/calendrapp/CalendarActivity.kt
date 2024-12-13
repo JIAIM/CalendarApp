@@ -39,7 +39,7 @@ class CalendarActivity : AppCompatActivity() {
         monthPrevious = findViewById(R.id.calendar_month_previous)
         recyclerView = findViewById(R.id.recycler_view)
 
-        recyclerView.layoutManager = GridLayoutManager(this, 7) // 7 столбцов (дни недели)
+        recyclerView.layoutManager = GridLayoutManager(this, 7)
 
         monthNext.setOnClickListener {
             calendar.add(Calendar.MONTH, 1)
@@ -59,10 +59,11 @@ class CalendarActivity : AppCompatActivity() {
         val monthFormat = SimpleDateFormat("MMMM yyyy", Locale.getDefault())
         monthText.text = monthFormat.format(calendar.time)
 
+        val month_year =  monthText.text
         val days = generateDaysForMonth(calendar)
 
         val calendarAdapter = CalendarAdapter(days) { day ->
-            Toast.makeText(this, "Вы выбрали: $day", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "You choose: $day $month_year", Toast.LENGTH_SHORT).show()
         }
         recyclerView.adapter = calendarAdapter
     }
