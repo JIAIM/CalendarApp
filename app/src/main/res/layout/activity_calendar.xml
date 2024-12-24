@@ -57,7 +57,7 @@
             android:background="@drawable/rounded_background">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp"
@@ -67,8 +67,8 @@
                 <ImageView
                     android:id="@+id/calendar_month_previous"
                     android:elevation="3dp"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:src="@drawable/arrow_left"
                     android:background="@drawable/rounded_arrow"
                     android:contentDescription="Right Icon" />
@@ -86,7 +86,7 @@
                     android:text="December 2024"
                     android:textColor="@color/black"
                     android:fontFamily="@font/comfortaa_bold"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
 
                 <View
                     android:layout_width="0dp"
@@ -96,8 +96,8 @@
                 <ImageView
                     android:id="@+id/calendar_month_next"
                     android:elevation="3dp"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:src="@drawable/arrow_right"
                     android:background="@drawable/rounded_arrow"
                     android:contentDescription="Right Icon" />
@@ -110,7 +110,6 @@
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
 
-                <!-- Week Days -->
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -223,7 +222,7 @@
             android:textStyle="bold"
             app:cornerRadius="30dp"
             android:visibility="gone"
-            android:text="Create event"/>
+            android:text="Створити подію"/>
 
         <LinearLayout
             android:id="@+id/linear_events"

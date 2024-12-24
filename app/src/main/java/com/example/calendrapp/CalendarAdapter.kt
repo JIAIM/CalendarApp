@@ -44,7 +44,7 @@ class CalendarAdapter(
         @RequiresApi(Build.VERSION_CODES.O)
         fun getCurrentMonth(): String {
             val currentDate = LocalDate.now()
-            val formatter = DateTimeFormatter.ofPattern("MMMM", Locale.getDefault())
+            val formatter = DateTimeFormatter.ofPattern("MMMM", Locale.ENGLISH)
             return currentDate.format(formatter)
         }
 

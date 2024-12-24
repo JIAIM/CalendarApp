@@ -84,9 +84,9 @@ class CalendarActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     fun updateCalendar() {
-        val monthFormat = SimpleDateFormat("MMMM yyyy", Locale.getDefault())
+        val monthFormat = SimpleDateFormat("MMMM yyyy", Locale.ENGLISH)
         monthText.text = monthFormat.format(calendar.time)
-        val month = SimpleDateFormat("MMMM", Locale.getDefault()).format(calendar.time)
+        val month = SimpleDateFormat("MMMM", Locale.ENGLISH).format(calendar.time)
         val monthYear = monthText.text
         val days = generateDaysForMonth(calendar)
 
