@@ -50,13 +50,13 @@ class RegisterActivity : AppCompatActivity() {
 
 
             if (login.length < 3) {
-                userLogin.error = "Login should be at least 3 symbols"
+                userLogin.error = "Логін повинен бути не менше 3 символів"
                 userLogin.requestFocus()
                 return@setOnClickListener
             }
 
             if (!isValidEmail(email)) {
-                userEmail.error = "Input correct Email"
+                userEmail.error = "Введіть правильний Email"
                 userEmail.requestFocus()
                 return@setOnClickListener
             }
@@ -72,15 +72,15 @@ class RegisterActivity : AppCompatActivity() {
             val user = User(login, email, password)
 
             if (db.addUser(user)) {
-                Toast.makeText(this, "User registered successfully!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Користувач успішно зареєстрований!", Toast.LENGTH_SHORT).show()
                 userLogin.text.clear()
                 userEmail.text.clear()
                 userPassword.text.clear()
 
-                val intent = Intent(this, CalendarActivity::class.java)
+                val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
             } else {
-                userEmail.error = "Email is already registered"
+                userEmail.error = "Електронна адреса вже зареєстрована"
                 userEmail.requestFocus()
             }
         }

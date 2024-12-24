@@ -1,88 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/background_gradient3"
     tools:context=".CalendarActivity">
 
-
     <LinearLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp"
-        android:elevation="20dp"
-        android:background="@drawable/rounded_background">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:fontFamily="@font/comfortaa_bold"
-            android:textColor="@color/black"
-            android:textSize="25sp"
-            android:text="Calendar"/>
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/user"
-            android:contentDescription="User Icon" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="465dp"
-        android:orientation="vertical"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp"
-        android:elevation="40dp"
-        android:background="@drawable/rounded_background">
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginLeft="5dp">
-
-            <ImageView
-                android:id="@+id/calendar_month_previous"
-                android:elevation="3dp"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/arrow_left"
-                android:background="@drawable/rounded_arrow"
-                android:contentDescription="Right Icon" />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:elevation="20dp"
+            android:background="@drawable/rounded_background">
 
             <TextView
-                android:id="@+id/calendar_month_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="December 2024"
-                android:textColor="@color/black"
+                android:layout_gravity="start"
                 android:fontFamily="@font/comfortaa_bold"
-                android:textSize="20sp" />
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:text="Календар"/>
 
             <View
                 android:layout_width="0dp"
@@ -90,119 +39,210 @@
                 android:layout_weight="1" />
 
             <ImageView
-                android:id="@+id/calendar_month_next"
-                android:elevation="3dp"
+                android:id="@+id/account_image"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/arrow_right"
-                android:background="@drawable/rounded_arrow"
-                android:contentDescription="Right Icon" />
+                android:src="@drawable/user"
+                android:contentDescription="User Icon" />
         </LinearLayout>
-
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:columnCount="7"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp">
-
-            <!-- Week Days -->
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:text="Mon"
-                android:textColor="@color/black"
-                android:fontFamily="@font/comfortaa_bold"
-                android:textSize="16sp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:text="Tue"
-                android:textColor="@color/black"
-                android:fontFamily="@font/comfortaa_bold"
-                android:textSize="16sp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:text="Wed"
-                android:textColor="@color/black"
-                android:fontFamily="@font/comfortaa_bold"
-                android:textSize="16sp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:text="Thu"
-                android:textColor="@color/black"
-                android:fontFamily="@font/comfortaa_bold"
-                android:textSize="16sp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:text="Fri"
-                android:textColor="@color/black"
-                android:fontFamily="@font/comfortaa_bold"
-                android:textSize="16sp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:text="Sat"
-                android:textColor="@color/black"
-                android:fontFamily="@font/comfortaa_bold"
-                android:textSize="16sp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:text="Sun"
-                android:textColor="@color/black"
-                android:fontFamily="@font/comfortaa_bold" android:textSize="16sp" />
-
-        </GridLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="465dp"
             android:orientation="vertical"
-            android:layout_marginTop="5dp"
-            android:padding="0dp">
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:elevation="40dp"
+            android:background="@drawable/rounded_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp">
+
+                <ImageView
+                    android:id="@+id/calendar_month_previous"
+                    android:elevation="3dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/arrow_left"
+                    android:background="@drawable/rounded_arrow"
+                    android:contentDescription="Right Icon" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/calendar_month_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="December 2024"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/comfortaa_bold"
+                    android:textSize="20sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:id="@+id/calendar_month_next"
+                    android:elevation="3dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/arrow_right"
+                    android:background="@drawable/rounded_arrow"
+                    android:contentDescription="Right Icon" />
+            </LinearLayout>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="7"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <!-- Week Days -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:text="ПН"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/comfortaa_bold"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:text="ВТ"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/comfortaa_bold"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:text="СР"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/comfortaa_bold"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:text="ЧТ"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/comfortaa_bold"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:text="ПТ"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/comfortaa_bold"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:text="СБ"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/comfortaa_bold"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:text="НД"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/comfortaa_bold" android:textSize="16sp" />
+
+            </GridLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="5dp"
+                android:padding="0dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/calendar_items_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/comfortaa_bold"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:text="Оберіть дату"/>
+
+        <Button
+            android:id="@+id/create_event"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/blue"
+            android:fontFamily="@font/comfortaa_bold"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:cornerRadius="30dp"
+            android:visibility="gone"
+            android:text="Create event"/>
+
+        <LinearLayout
+            android:id="@+id/linear_events"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:elevation="40dp"
+            android:visibility="gone"
+            android:background="@drawable/rounded_background">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_view"
+                android:id="@+id/events_for_date"
+                android:scrollbars="none"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/calendar_items_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="30dp"
-        android:fontFamily="@font/comfortaa_bold"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:text="Choose date"/>
-
-
-</LinearLayout>
+</ScrollView>

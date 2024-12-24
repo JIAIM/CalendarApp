@@ -35,6 +35,15 @@ class LoginActivity : AppCompatActivity() {
             insets
         }
 
+        val sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE)
+        val isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false)
+
+        if (isLoggedIn) {
+            val intent = Intent(this, CalendarActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestEmail()
             .build()
@@ -59,21 +68,28 @@ class LoginActivity : AppCompatActivity() {
             val isAuth = db.getUser(login, password)
 
             if (isAuth) {
-                Toast.makeText(this, "User is authenticated", Toast.LENGTH_LONG).show()
+                val sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE)
+                val editor = sharedPreferences.edit()
+                editor.putBoolean("isLoggedIn", true)
+                editor.putString("currentUser", login)
+                editor.putBoolean("isGoogleUser", false)
+                editor.apply()
+
+                Toast.makeText(this, "Користувач аутентифікований", Toast.LENGTH_LONG).show()
                 userLogin.text.clear()
                 userPassword.text.clear()
                 val intent = Intent(this, CalendarActivity::class.java)
                 startActivity(intent)
             } else {
-                Toast.makeText(this, "User is NOT authenticated", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Користувач НЕ автентифікований", Toast.LENGTH_LONG).show()
 
                 if (!db.isUserExists(login)) {
-                    userLogin.error = "Login does not exist"
+                    userLogin.error = "Логін не існує"
                     userLogin.requestFocus()
                 } else {
                     userLogin.error = null
                     if (db.isPasswordIncorrect(login, password)) {
-                        userPassword.error = "Incorrect password"
+                        userPassword.error = "Невірний пароль"
                         userPassword.requestFocus()
                     } else {
                         userPassword.error = null
@@ -114,25 +130,38 @@ class LoginActivity : AppCompatActivity() {
             if (email != null) {
                 val db = DBHelper(this, null)
                 if (db.isGoogleUser(email)) {
-                    Toast.makeText(this, "User with email $email is authenticated using Google", Toast.LENGTH_LONG).show()
+                    val sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE)
+                    val editor = sharedPreferences.edit()
+                    editor.putBoolean("isLoggedIn", true)
+                    editor.putString("currentUser", email)
+                    editor.putBoolean("isGoogleUser", true)
+                    editor.apply()
+
+                    Toast.makeText(this, "Користувач з електронною поштою $email автентифіковано за допомогою Google", Toast.LENGTH_LONG).show()
                     val intent = Intent(this, CalendarActivity::class.java)
                     startActivity(intent)
                 } else {
                     val isAdded = db.addGoogleUser(email)
                     if (isAdded) {
-                        Toast.makeText(this, "Welcome, $email! User is registered using Google", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this, "Ласкаво просимо, $email! Користувач зареєстрований за допомогою Google", Toast.LENGTH_LONG).show()
+                        val sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE)
+                        val editor = sharedPreferences.edit()
+                        editor.putBoolean("isLoggedIn", true)
+                        editor.putString("currentUser", email)
+                        editor.putBoolean("isGoogleUser", true)
+                        editor.apply()
                         val intent = Intent(this, CalendarActivity::class.java)
                         startActivity(intent)
                     } else {
-                        Toast.makeText(this, "Error registration using google", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Помилка реєстрації через Google", Toast.LENGTH_SHORT).show()
                     }
                 }
 
             } else {
-                Toast.makeText(this, "Can`t find user Email", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Не вдається знайти електронну адресу користувача", Toast.LENGTH_SHORT).show()
             }
         } catch (e: ApiException) {
-            Toast.makeText(this, "Erron login: ${e.message}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Помилка входу: ${e.message}", Toast.LENGTH_SHORT).show()
         }
     }
 

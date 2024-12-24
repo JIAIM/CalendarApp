@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginRight="30dp"
+    android:layout_marginLeft="30dp"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/event_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/comfortaa_bold"
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:text="Дата"/>
+
+    <Button
+        android:id="@+id/time_picker_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/pink"
+        android:fontFamily="@font/comfortaa_bold"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:text="Оберіть час"
+        app:cornerRadius="8dp"
+        android:elevation="10dp" />
+
+    <EditText
+        android:id="@+id/event_name"
+        android:layout_width="match_parent"
+        android:layout_height="60sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/input"
+        android:padding="16dp"
+        android:textColorHint="#B0B0B0"
+        android:textColor="@color/text_grey"
+        android:fontFamily="@font/comfortaa"
+        android:textSize="16sp"
+        android:elevation="10dp"
+        android:hint="Назва події"/>
+
+    <EditText
+        android:id="@+id/event_context"
+        android:layout_width="match_parent"
+        android:layout_height="60sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/input"
+        android:padding="16dp"
+        android:textColorHint="#B0B0B0"
+        android:textColor="@color/text_grey"
+        android:fontFamily="@font/comfortaa"
+        android:textSize="16sp"
+        android:elevation="10dp"
+        android:hint="Опис події"/>
+
+    <Button
+        android:id="@+id/save_event"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/blue"
+        android:fontFamily="@font/comfortaa_bold"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="8dp"
+        android:elevation="10dp"
+        android:text="Зберегти подію"/>
+</LinearLayout>
